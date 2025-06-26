@@ -1,12 +1,15 @@
+//✅ C++ If…Else
+//Question: Input an integer and determine whether it is positive, negative or zero.
 #include <iostream>
-#include <iomanip>
 using namespace std;
-int main() {
-    int C;
-    double F;
-    cin >> C ;
-    F=(C*9/5)+32;
-    cout << fixed << setprecision(1);
-    cout << "Temperature in Fehrenhrit: "<< F <<endl ;
-    return 0 ;
+int main(){
+    int a;
+    cin>> a;
+    if(a>0){
+        cout << "positive"<< endl;
+        }else if(a=0){
+        cout << "zero" << endl;
+        }else{
+            cout << "negative" << endl;
+        }
 }

@@ -1,12 +1,13 @@
+//✅ C++ For Loop
+//Topic: Output all even numbers from 1 to n.
 #include <iostream>
-#include <iomanip>
 using namespace std;
-int main() {
-    int w;
-    float h,BMI;
-    cin >> w >> h;
-    BMI=w/(h*h);
-    cout << fixed<< setprecision(2);
-    cout << "Your BMI is "<<BMI <<endl ;
-    return 0 ;
+int main(){
+    int n;
+    cin >> n;
+    for(int i=1; i<=n; i++){
+        if(n%2==0){
+            cout << i << " ";
+        }
+    }
 }

@@ -1,9 +1,12 @@
+//✅ C++ Math
+//Question: Input a positive integer and output its square root (keep two decimal places).
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 using namespace std;
-int main() {
-    float r,pi=3.14,area;
-    cin >> r ;
-    area=pi*r*r;
-    cout << "The area is "<< area<<endl ;
-    return 0 ;
+int main(){
+    int a;
+    cin >> a;
+    cout << fixed << setprecision(2);
+    cout << "sqrt: " << sqrt(a) << endl;
 }
