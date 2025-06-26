@@ -1,21 +1,18 @@
 #include <iostream>
+#include <queue>
+#include <string>
 using namespace std;
-int main (){
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i=0; i<n; i++){
-        cin >> a[i];
+int main(){
+    queue<string> k;
+    string name;
+
+    cout << "enter tne name: ";
+    for (int i=0; i<5; ++i){
+        cin >> name;
+        k.push(name);
     }
-    int t;
-    cin >> t;
-    int index;
-    for (int i=0; i<n; i++){
-        if(a[i]==t){
-            index=i;
-            cout << "Found at index "<< index << endl;
-            return 0;
-        }
+    while(!k.empty()){
+        cout << "Now serving:<" << k.front() << ">" << endl;
+        k.pop();
     }
-    cout << "Not Found.";
 }

@@ -1,15 +1,30 @@
 #include <iostream>
+#include <stack>
+#include <string>
 using namespace std;
-int main(){
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i=0; i<n; i++){
-        cin >> a[i];
+
+bool check(string s){
+    stack <char> k;
+
+    for(char c:s){
+        if(c=='('){
+            k.push(c);
+        }else if(c==')'){
+            if(k.empty()) return false;
+            k.pop();
+        }
     }
-    for (int i=n-1; i>=0; i--){
-        cout << a[i] << " ";
-    }
-    cout << endl;
-    return 0;
+    return k.empty();
 }
+
+    int main(){
+        string x;
+        cin >> x;
+        
+        if(check(x)){
+            cout << "correct" << endl;
+        }else{
+            cout << "incorrect" << endl;
+        }
+        return 0;
+    }

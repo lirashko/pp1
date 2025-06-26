@@ -1,21 +1,17 @@
 #include <iostream>
+#include<map>
+#include<sstream>
 using namespace std;
-int main (){
-    int n;
-    cin >> n;
-    int a[n];
-    int odd=0;
-    int even=0;
-    for (int i=0; i<n; i++){
-        cin >> a[i];
+int main(){
+    string t ="this is a test this is only a test";
+    map<string,int> m;
+    stringstream ss(t);
+
+    while(ss>>t){
+        m[t]++;
     }
-    for (int i=0; i<n; i++){
-        if(a[i]%2==0){
-            even++;
-        }else{
-            odd++;
-        }
-        }
-    cout << "even=" << even << endl;
-    cout << "odd=" << odd << endl;
+    for(auto i:m){
+        cout << i.first << "->" << i.second << endl;
     }
+    cout << endl;
+}

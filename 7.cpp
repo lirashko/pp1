@@ -1,21 +1,33 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
-int main (){
-    int a[3][3],b[3][3];
-    for (int i=0; i<3; i++){
-        for(int j=0; j<3; j++){
-            cin >> a[i][j];
-        }
+
+int main() {
+    vector<int> v;
+
+    for (int i = 1; i <= 20; ++i) {
+        v.push_back(i);
     }
-    for (int i=0; i<3; i++){
-        for (int j=0; j<3; j++){
-            b[j][i]=a[i][j];
-        }
-    }
-    for (int i=0; i<3; i++){
-        for (int j=0; j<3; j++){
-            cout << b[i][j] << " ";
-        }
-        cout << endl;
-    }
+
+    reverse(v.begin(), v.end());
+
+    cout << "Reversed: ";
+    for (int x : v) cout << x << " ";
+    cout << endl;
+
+    int even_count = count_if(v.begin(), v.end(), [](int x) {
+        return x % 2 == 0;
+    });
+    cout << "Number of even elements: " << even_count << endl;
+
+    v.erase(remove_if(v.begin(), v.end(), [](int x) {
+        return x % 3 == 0;
+    }), v.end());
+    
+    cout << "After removing divisible by 3: ";
+    for (int x : v) cout << x << " ";
+    cout << endl;
+
+    return 0;
 }
