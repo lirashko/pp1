@@ -1,13 +1,28 @@
-//✅ C++ For Loop
-//Topic: Output all even numbers from 1 to n.
 #include <iostream>
 using namespace std;
 int main(){
-    int n;
-    cin >> n;
-    for(int i=1; i<=n; i++){
-        if(n%2==0){
-            cout << i << " ";
+    int a[4][4];
+
+    for (int i=0; i<4; i++){
+        for(int j=0; j<4; j++){
+            cin >> a[i][j];
         }
     }
+    int maxSum= -1e9;
+    int row= -1;
+
+    for (int i=0; i<4; i++){
+        int rowSum=0;
+        for(int j=0; j<4; j++){
+            rowSum += a[i][j];
+            }
+        if(maxSum<rowSum){
+            maxSum= rowSum;
+            row = i;
+            }
+        }
+    cout << "Row " << row+1 << " has the maximum sum: " << maxSum << endl;
+    cout << endl;
+
+    return 0;
 }

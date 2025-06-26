@@ -1,12 +1,15 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
-int main() {
-    int a;
-    cin >> a;
-    if (a%2==0){
-        cout <<"The number is even.";
-    }else{
-        cout <<"The number is odd.";
+int main(){
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i=0; i<n; i++){
+        cin >> a[i];
     }
-    return 0 ;
+    sort(a,a+n);
+    for (int i=0; i<n; i++){
+        cout << a[i] << " ";
+    }
 }

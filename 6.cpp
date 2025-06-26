@@ -1,13 +1,27 @@
-//✅ C++ Switch
-//Question: Input a number 1~3 and output the corresponding day of the week.
 #include <iostream>
 using namespace std;
-int main(){
-    int day;
-    cin >> day;
-    switch(day){
-        case 1:cout << "monday" << endl; break;
-        case 2:cout << "tuesday"<< endl; break;
-        case 3:cout << "wednesday"<< endl; break;
+int main (){
+    int a[3][3],b[3][3],sum[3][3];
+
+    for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            cin >> a[i][j];
+        }
+    }
+    for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            cin >> b[i][j];
+        }
+    }
+    for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            sum[i][j]= a[i][j]+b[i][j];
+        }
+    }
+    for (int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
+            cout << sum[i][j] << " ";
+        }
+        cout << endl;
     }
 }

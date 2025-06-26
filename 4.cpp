@@ -1,10 +1,15 @@
-//✅ C++ Booleans
-//Question: Enter two integers and determine whether they are equal and whether they are both positive.
 #include <iostream>
 using namespace std;
 int main(){
-    int a,b;
-    cin >> a >> b;
-    cout <<"equal: "<< (a>0 && b>0) << endl;
-    cout << "bothpositives."<< (a==b) << endl;
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i=0; i<n; i++){
+        cin >> a[i];
+    }
+    for (int i=n-1; i>=0; i--){
+        cout << a[i] << " ";
+    }
+    cout << endl;
+    return 0;
 }

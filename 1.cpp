@@ -1,13 +1,14 @@
-//✅ C++ Operators
-//Question: Input two integers and output their sum, difference, product, quotient, and remainder.
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main(){
-    int n,m;
-    cin >> n >> m;
-    cout << "sum: " << n+m << endl;
-    cout << "difference: " << n-m << endl;
-    cout << "product: "<< n*m << endl;
-    cout << "quotient: "<< n/m << endl;
-    cout << "remainder: "<< n%m << endl;
+    int n;
+    cin >> n;
+    int a[n];
+    int sum=0;
+    for(int i=0; i<n; i++){
+        cin >> a[i];
+        sum+=a[i];
+    }
+    cout << sum << endl;
+    return 0;
 }
