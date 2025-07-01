@@ -1,18 +1,14 @@
-#include<iostream>
-#include <string>
-#include<stack>
+#include <iostream>
 using namespace std;
-
-int main(){
-    string s;
-    cin >> s;
-    stack<char> k;
-    for(int i=0; i<s.length(); i++){
-        k.push(s[i]); 
-    }
-    while(!k.empty()){
-        cout << k.top();
-        k.pop();
-    }
-    cout << endl;
+int fibonacci(int n){
+    if(n==0) return 0;
+    else if(n==1) return 1;
+    else return fibonacci(n-1)+fibonacci(n-2);
 }
+int main(){
+    int n;
+    cin >> n;
+    int fac=1;
+    cout << fibonacci(n) << endl;
+}
+//a[0]=0 a[1]=1 a[2]=1 a[3]=2

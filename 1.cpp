@@ -1,23 +1,11 @@
 #include <iostream>
-#include <stack>
 using namespace std;
-
+int factorial (int n){
+    if(n==0 || n==1) return 1;
+    else return n*factorial(n-1);
+}
 int main(){
-    int a[5];
-    stack<int> k;
-    for(int i=0; i<5; i++){
-        cin >> a[i];
-    }
-    for(int i=0; i<5; i++){
-        k.push(a[i]);
-    }
-    for(int i=0; i<5; i++){
-        a[i]=k.top();
-        k.pop();
-    }
-    for(int i=0; i<5; i++){
-        cout << a[i] << " ";
-    }
-    cout << endl;
-    
+    int n;
+    cin >> n;
+    cout << factorial(n) << endl;
 }

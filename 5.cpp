@@ -1,29 +1,12 @@
 #include <iostream>
-#include <deque>
 using namespace std;
+int power(int a,int b){
+    if(b==0) return 1;
+    else return a*power(a,b-1);
+}
 int main(){
-    deque<int> k;
-    k.push_front (10);
-    k.push_back (20);
-    k.push_front (5);
-
-    cout << "Deque contains: ";
-    for(int x:k){
-        cout << x<< " ";
-    }
-    cout << endl;
-    int back=k.back();
-    k.pop_back();
-    cout << "Pop back: " << back << endl;
-
-    int front=k.front();
-    k.pop_front();
-    cout << "Pop front: " << front << endl;
-
-    for(int x:k){
-        cout << "Remaining: "<< x;
-    }
-
-    cout << endl;
-
+    int a,b;
+    cin >> a >> b;
+    cout << power(a,b) << endl;
+    return 0;
 }
