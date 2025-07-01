@@ -1,17 +1,18 @@
-#include <iostream>
-#include<map>
-#include<sstream>
+#include<iostream>
+#include<queue>
 using namespace std;
 int main(){
-    string t ="this is a test this is only a test";
-    map<string,int> m;
-    stringstream ss(t);
+    queue<int> k;
 
-    while(ss>>t){
-        m[t]++;
+    for(int i=0; i<5; ++i){
+        int x;
+        cin >> x;
+        k.push(x);
     }
-    for(auto i:m){
-        cout << i.first << "->" << i.second << endl;
+    while(!k.empty()){
+        cout << k.front() << " ";
+        k.pop();
     }
     cout << endl;
+
 }

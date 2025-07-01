@@ -1,27 +1,18 @@
 #include<iostream>
-#include <set>
+#include <string>
+#include<stack>
 using namespace std;
+
 int main(){
-    set<int> s;
-    int x;
-
-    cout << "enter 10 number: ";
-    for(int i=0; i<10; i++){
-        cin >> x;
-        s.insert(x);
+    string s;
+    cin >> s;
+    stack<char> k;
+    for(int i=0; i<s.length(); i++){
+        k.push(s[i]); 
     }
-    cout << "find a number: ";
-    cin >> x;
-
-    if(s.find(x)!=s.end()) cout << "found";
-    else cout << "not found";
-    cout << endl;
-
-    cout << "set elements: ";
-    for(auto i=s.begin(); i!=s.end(); i++){
-        cout << *i << " ";
+    while(!k.empty()){
+        cout << k.top();
+        k.pop();
     }
     cout << endl;
-
-    return 0;
 }

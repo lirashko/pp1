@@ -1,24 +1,29 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include <deque>
+#include <string>
 using namespace std;
-double average(const vector<int>& v){
-    int sum=0;
-    for(auto it=v.begin(); it != v.end(); ++it){
-        sum+=*it;
+
+bool check(string a){
+    deque<char> k;
+    for(int x:a){
+        k.push_back(x);
     }
-    if (v.empty()) return 0.0;
-    return static_cast<double>(sum) /v.size(); 
+    while(k.size()>1){
+        if (k.front()!= k.back()){
+            return false;
+        }
+        k.pop_front();
+        k.pop_back();
+    }
+    return true;
 }
 int main(){
-    vector<int> v;
-    int n;
-    cin >> n;
-    int a;
-    for(int i=0; i<n; ++i){
-        cin >> a;
-        v.push_back(a);
+    string s;
+    cin >> s;
+    if(check(s)){
+    cout << "it is a palindrome."<< endl;
+    }else{
+    cout << "it is not a palindrome."<< endl;
     }
-    double result =average(v);
-    cout << "average= " << result << endl;
     return 0;
 }

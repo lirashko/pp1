@@ -1,18 +1,29 @@
 #include <iostream>
-#include <queue>
-#include <string>
+#include <deque>
 using namespace std;
 int main(){
-    queue<string> k;
-    string name;
+    deque<int> k;
+    k.push_front (10);
+    k.push_back (20);
+    k.push_front (5);
 
-    cout << "enter tne name: ";
-    for (int i=0; i<5; ++i){
-        cin >> name;
-        k.push(name);
+    cout << "Deque contains: ";
+    for(int x:k){
+        cout << x<< " ";
     }
-    while(!k.empty()){
-        cout << "Now serving:<" << k.front() << ">" << endl;
-        k.pop();
+    cout << endl;
+    int back=k.back();
+    k.pop_back();
+    cout << "Pop back: " << back << endl;
+
+    int front=k.front();
+    k.pop_front();
+    cout << "Pop front: " << front << endl;
+
+    for(int x:k){
+        cout << "Remaining: "<< x;
     }
+
+    cout << endl;
+
 }
